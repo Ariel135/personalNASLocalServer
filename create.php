@@ -1,25 +1,22 @@
 <?php
-
-
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']))
+{
 	
-
-	require "common.php";
 	require "config.php";
+	require "common.php";
 
-	try {
-	
+	try 
+	{
 		$connection = new PDO($dsn, $username, $password, $options);
-		//insert new user code here
-
+		
 		$new_user = array(
-		"firstname" => $_POST['firstname'],
-		"lastname"	=> $_POST['lastname'],
-		"email"		=> $_POST['email'],
-		"age"		=> $_POST['age'],
-		"location"	=> $_POST['location']		
-
+			"firstname" => $_POST['firstname'],
+			"lastname"  => $_POST['lastname'],
+			"email"     => $_POST['email'],
+			"age"       => $_POST['age'],
+			"location"  => $_POST['location']
 		);
+
 		$sql = sprintf(
 			"INSERT INTO %s (%s) values (%s)",
 			"users",
@@ -30,30 +27,24 @@ if (isset($_POST['submit'])) {
 		$statement = $connection->prepare($sql);
 		$statement->execute($new_user);
 
-
-
 	}
-	catch(PDOException $error){
+
+	catch(PDOException $error) 
+	{
 		echo $sql . "<br>" . $error->getMessage();
 	}
-
-
-
+	
 }
-
 ?>
-
-
 
 <?php include "templates/header.php"; ?>
 
 <?php 
-	if (isset($_POST['submit']) && $statement){
-?>
-		<blockquotes><?php echo escape($_POST['firstname']); ?> successfuly added. </blockquotes>
-	<?php
-	} ?>
-
+if (isset($_POST['submit']) && $statement) 
+{ ?>
+	<blockquote><?php echo escape($_POST['firstname']); ?> successfully added.</blockquote>
+<?php 
+} ?>
 
 <h2>Add a user</h2>
 
