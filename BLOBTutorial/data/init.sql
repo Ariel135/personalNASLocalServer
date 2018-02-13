@@ -1,7 +1,6 @@
-CREATE DATABASE test1;
+CREATE DATABASE BLOBDB;
 
-use test1;
-
+use BLOBDB;
 
 CREATE TABLE files (
     id   INT           AUTO_INCREMENT PRIMARY KEY,

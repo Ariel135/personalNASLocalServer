@@ -5,23 +5,41 @@ class BobDemo {
     const DB_HOST = 'localhost';
     const DB_NAME = 'test1';
     const DB_USER = 'root';
-    const DB_PASSWORD = 'Zosaz7uk';
+    const DB_PASSWORD = 'Welcome2';
+
+
+/*	$host       = "localhost";
+	$username   = "root";
+	$password   = "Welcome2";
+	$dbname     = "test"; // will use later
+	$dsn        = "mysql:host=$host;dbname=$dbname"; // will use later
+	$options    = array(
+	                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+	              );
+
+    $connection = new PDO("mysql:host=$host", $username, $password, $options);*/
 
     /**
      * PDO instance
      * @var PDO 
      */
     private $pdo = null;
+/*    $options    = array(
+	                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+	              );
+*/
 
     /**
      * Open the database connection
      */
     public function __construct() {
         // open database connection
-        $conStr = sprintf("mysql:host=%s;dbname=%s;charset=utf8", self::DB_HOST, self::DB_NAME);
+        //$conStr = sprintf("mysql:host=%s;dbname=%s;charset=utf8", self::DB_HOST, self::DB_NAME);
 
         try {
-            $this->pdo = new PDO($conStr, self::DB_USER, self::DB_PASSWORD);
+            $this->pdo = new PDO("mysql:host=$host", self::DB_USER, self::DB_PASSWORD);
+            $sql = file_get_contents("data/BLOBtable.sql");
+			$this->pdo->exec($sql);
             //for prior PHP 5.3.6
             //$conn->exec("set names utf8");
         } catch (PDOException $e) {
