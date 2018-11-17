@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="55.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edp.ProgressBarController">
+    <children>
+      <AnchorPane fx:id="container" layoutX="13.0" layoutY="22.0" prefHeight="55.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="name" fill="#fa9734" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dummyFileName.pdf" wrappingWidth="154.13671875">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <ToggleButton fx:id="state" layoutX="178.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#changeState" prefHeight="20.0" prefWidth="20.0">
+               <graphic>
+                  <ImageView fx:id="state_img" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@images/media_play.png" />
+                     </image>
+                  </ImageView>
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="cancle" layoutX="324.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#cancleTask" prefHeight="20.0" prefWidth="20.0">
+               <graphic>
+                  <ImageView fx:id="cancle_img" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/navigate_cross.png" />
+                     </image>
+                  </ImageView>
+               </graphic></ToggleButton>
+            <ProgressBar fx:id="progress" layoutX="214.0" layoutY="14.0" prefHeight="28.0" prefWidth="110.0" progress="0.0" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

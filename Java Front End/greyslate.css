@@ -1,0 +1,32 @@
+.root{
+
+}
+
+.button{
+    -fx-background-color:   #fa9734;  
+    -fx-border-color:    #BABABA;  
+}
+
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #3D4956;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #3D4956;
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-stroke: #111222;
+    -fx-stroke-width: 3pt;
+}
+.jfx-tab-pane .tab
+{
+     -fx-background-color:   #BABABA;
+    -fx-border-color: #BABABA;      
+    -fx-border-radius: 20 30 0 10;
+    -fx-background-radius: 20 30 0 10;
+    -fx-focus-color: #fa9734;    
+}
+.jfx-tab-pane .focus-indicator{     
+     -fx-border-radius: 30 60 25 25;     
+     
+}
+
